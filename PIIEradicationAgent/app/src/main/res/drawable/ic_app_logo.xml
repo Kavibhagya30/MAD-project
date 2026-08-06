@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Outer shield -->
+    <path
+        android:fillColor="#1A2A52"
+        android:strokeColor="#00E676"
+        android:strokeWidth="2"
+        android:pathData="M60,8 L104,24 L104,56 C104,84 86,102 60,112 C34,102 16,84 16,56 L16,24 Z" />
+
+    <!-- Inner shield glow -->
+    <path
+        android:fillColor="#8C5CF6"
+        android:fillAlpha="0.18"
+        android:pathData="M60,18 L94,31 L94,56 C94,78 80,93 60,101 C40,93 26,78 26,56 L26,31 Z" />
+
+    <!-- Checkmark / lock hybrid -->
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M45,60 L55,70 L78,44 L82,48 L55,79 L41,64 Z" />
+
+    <!-- Circuit accents -->
+    <path
+        android:strokeColor="#FF9F1C"
+        android:strokeWidth="2.5"
+        android:pathData="M30,40 L38,40 M82,40 L90,40 M30,80 L38,80 M82,80 L90,80" />
+
+</vector>

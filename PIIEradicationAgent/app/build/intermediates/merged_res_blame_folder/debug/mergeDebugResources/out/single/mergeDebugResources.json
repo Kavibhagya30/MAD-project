@@ -1,0 +1,166 @@
+[
+    {
+        "merged": "com.piiagent.app-debug-49:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.piiagent.app-main-51:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_stat_active.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_stat_active.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_email.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_email.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_nav_requests.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_nav_requests.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/color_bottom_nav_item_color.xml.flat",
+        "source": "com.piiagent.app-main-51:/color/bottom_nav_item_color.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_action_notification.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_action_notification.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_nav_dashboard.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_nav_dashboard.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_nav_scan.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_nav_scan.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_icon_circle_green.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_icon_circle_green.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_fragment_scan.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/fragment_scan.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_activity_splash.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_chip_warning.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_chip_warning.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.piiagent.app-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_risk_warning.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_risk_warning.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_stat_completed.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_stat_completed.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_stat_pending.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_stat_pending.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_fragment_dashboard.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_item_recent_activity.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/item_recent_activity.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_stat_broker.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_stat_broker.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_activity_main.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_activity_register.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_chip_info.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_chip_info.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_chip_danger.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_chip_danger.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_icon_circle_purple.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_icon_circle_purple.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_icon_circle_blue.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_icon_circle_blue.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_splash.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_splash.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_app_logo.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_app_logo.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_icon_circle_orange.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_icon_circle_orange.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/mipmap_ic_launcher_round.xml.flat",
+        "source": "com.piiagent.app-main-51:/mipmap/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_nav_profile.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_nav_profile.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/mipmap_ic_launcher.xml.flat",
+        "source": "com.piiagent.app-main-51:/mipmap/ic_launcher.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_ic_shield_check.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/ic_shield_check.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_fragment_requests.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/fragment_requests.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_activity_login.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/navigation_nav_graph.xml.flat",
+        "source": "com.piiagent.app-main-51:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/layout_fragment_profile.xml.flat",
+        "source": "com.piiagent.app-main-51:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.piiagent.app-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.piiagent.app-debug-49:/drawable_bg_chip_success.xml.flat",
+        "source": "com.piiagent.app-main-51:/drawable/bg_chip_success.xml"
+    }
+]

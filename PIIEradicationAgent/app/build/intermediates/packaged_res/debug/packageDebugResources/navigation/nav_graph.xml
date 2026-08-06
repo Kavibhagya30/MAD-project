@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/nav_dashboard"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.piiagent.app.ui.dashboard.DashboardFragment"
+        android:label="@string/nav_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_scan"
+        android:name="com.piiagent.app.ui.scan.ScanFragment"
+        android:label="@string/nav_scan"
+        tools:layout="@layout/fragment_scan" />
+
+    <fragment
+        android:id="@+id/nav_requests"
+        android:name="com.piiagent.app.ui.requests.RequestsFragment"
+        android:label="@string/nav_requests"
+        tools:layout="@layout/fragment_requests" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.piiagent.app.ui.profile.ProfileFragment"
+        android:label="@string/nav_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

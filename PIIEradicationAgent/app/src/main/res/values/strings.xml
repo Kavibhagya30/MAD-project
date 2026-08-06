@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Autonomous PII Eradication Agent</string>
+
+    <!-- Splash -->
+    <string name="splash_tagline">Securing Your Digital Identity</string>
+    <string name="splash_loading">Initializing secure environment…</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to continue protecting your identity</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="action_login">Login</string>
+    <string name="action_forgot_password">Forgot Password?</string>
+    <string name="prompt_no_account">Don\'t have an account?</string>
+    <string name="action_register">Register</string>
+
+    <!-- Register -->
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Start monitoring your exposed data today</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="prompt_have_account">Already have an account?</string>
+    <string name="action_login_link">Login</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_requests">Requests</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_welcome_prefix">Welcome back,</string>
+    <string name="dashboard_user_name">Alex</string>
+    <string name="label_privacy_score">Privacy Score</string>
+    <string name="label_risk_level">Risk Level</string>
+    <string name="value_risk_level">Medium</string>
+    <string name="label_data_brokers_found">Data Brokers Found</string>
+    <string name="label_active_requests">Active Requests</string>
+    <string name="label_completed_requests">Completed Requests</string>
+    <string name="label_pending_requests">Pending Requests</string>
+    <string name="label_quick_actions">Quick Actions</string>
+    <string name="action_start_scan">Start Scan</string>
+    <string name="action_view_requests">View Requests</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="label_recent_activity">Recent Activity</string>
+
+    <!-- Scan / Requests / Profile placeholders -->
+    <string name="scan_title">Exposure Scan</string>
+    <string name="scan_subtitle">Run a full sweep across known data broker networks to detect where your personal information is exposed.</string>
+    <string name="action_run_new_scan">Run New Scan</string>
+
+    <string name="requests_title">Removal Requests</string>
+    <string name="requests_subtitle">Track every deletion request sent to data brokers on your behalf.</string>
+
+    <string name="profile_email_dummy">alex.morgan@example.com</string>
+    <string name="profile_phone_dummy">+1 (555) 012\u20113489</string>
+    <string name="label_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+
+</resources>
