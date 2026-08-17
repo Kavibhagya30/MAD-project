@@ -1,10 +1,11 @@
+# Android / Gradle
+.gradle/
+build/
+**/build/
+
+# IDE
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+
+# Generated files
+**/generated/
