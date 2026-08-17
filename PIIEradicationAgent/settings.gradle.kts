@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Autonomous PII Eradication Agent"
+rootProject.name = "PiiEradicationAgent"
 include(":app")
