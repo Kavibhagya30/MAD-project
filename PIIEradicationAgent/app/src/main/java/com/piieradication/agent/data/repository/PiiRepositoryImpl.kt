@@ -4,8 +4,10 @@ import com.piieradication.agent.data.eradicator.PiiEradicator
 import com.piieradication.agent.data.local.PiiRecordDao
 import com.piieradication.agent.data.local.PiiRecordEntity
 import com.piieradication.agent.data.remote.UserApi
+import com.piieradication.agent.domain.model.EventType
 import com.piieradication.agent.domain.model.PiiFieldType
 import com.piieradication.agent.domain.model.PiiRecord
+import com.piieradication.agent.domain.repository.EventLogRepository
 import com.piieradication.agent.domain.repository.PiiRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -16,7 +18,8 @@ import javax.inject.Inject
 class PiiRepositoryImpl @Inject constructor(
     private val api: UserApi,
     private val dao: PiiRecordDao,
-    private val eradicator: PiiEradicator
+    private val eradicator: PiiEradicator,
+    private val eventLog: EventLogRepository
 ) : PiiRepository {
 
     override fun observeRecords(): Flow<List<PiiRecord>> =
@@ -55,6 +58,11 @@ class PiiRepositoryImpl @Inject constructor(
 
         // 3. Persist only the redacted result — raw PII never touches disk.
         dao.insertAll(entities)
+
+        eventLog.log(
+            EventType.SYNC_COMPLETED,
+            "Synced ${entities.size} record(s), redacted ${entities.sumOf { it.fieldsRedactedCount }} field(s)."
+        )
 
         entities.map { it.toDomain() }
     }

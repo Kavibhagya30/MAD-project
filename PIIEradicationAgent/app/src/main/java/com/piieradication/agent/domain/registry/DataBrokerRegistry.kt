@@ -5,6 +5,9 @@ import com.piieradication.agent.domain.model.PiiFieldType
 import com.piieradication.agent.domain.model.PiiFieldType.ADDRESS
 import com.piieradication.agent.domain.model.PiiFieldType.EMAIL
 import com.piieradication.agent.domain.model.PiiFieldType.PHONE
+import com.piieradication.agent.domain.model.RiskLevel.HIGH
+import com.piieradication.agent.domain.model.RiskLevel.LOW
+import com.piieradication.agent.domain.model.RiskLevel.MEDIUM
 
 /**
  * Deterministic, offline stand-in for a real broker-scanning service.
@@ -21,14 +24,14 @@ import com.piieradication.agent.domain.model.PiiFieldType.PHONE
 object DataBrokerRegistry {
 
     val all: List<DataBroker> = listOf(
-        DataBroker("spokeo", "Spokeo", "People search", setOf(EMAIL, PHONE, ADDRESS)),
-        DataBroker("whitepages", "Whitepages", "People search", setOf(PHONE, ADDRESS)),
-        DataBroker("beenverified", "BeenVerified", "Background reports", setOf(EMAIL, PHONE, ADDRESS)),
-        DataBroker("mylife", "MyLife", "Reputation profiles", setOf(EMAIL, ADDRESS)),
-        DataBroker("radaris", "Radaris", "People search", setOf(PHONE, ADDRESS)),
-        DataBroker("peoplefinders", "PeopleFinders", "People search", setOf(EMAIL, PHONE, ADDRESS)),
-        DataBroker("intelius", "Intelius", "Background reports", setOf(EMAIL, PHONE)),
-        DataBroker("truthfinder", "TruthFinder", "Background reports", setOf(PHONE, ADDRESS))
+        DataBroker("spokeo", "Spokeo", "People search", setOf(EMAIL, PHONE, ADDRESS), HIGH),
+        DataBroker("whitepages", "Whitepages", "People search", setOf(PHONE, ADDRESS), MEDIUM),
+        DataBroker("beenverified", "BeenVerified", "Background reports", setOf(EMAIL, PHONE, ADDRESS), HIGH),
+        DataBroker("mylife", "MyLife", "Reputation profiles", setOf(EMAIL, ADDRESS), MEDIUM),
+        DataBroker("radaris", "Radaris", "People search", setOf(PHONE, ADDRESS), MEDIUM),
+        DataBroker("peoplefinders", "PeopleFinders", "People search", setOf(EMAIL, PHONE, ADDRESS), HIGH),
+        DataBroker("intelius", "Intelius", "Background reports", setOf(EMAIL, PHONE), MEDIUM),
+        DataBroker("truthfinder", "TruthFinder", "Background reports", setOf(PHONE, ADDRESS), MEDIUM)
     )
 
     fun detect(fieldTypes: Set<PiiFieldType>): List<DataBroker> =

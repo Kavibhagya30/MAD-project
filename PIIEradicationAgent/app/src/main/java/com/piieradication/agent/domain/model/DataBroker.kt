@@ -10,5 +10,6 @@ data class DataBroker(
     val id: String,
     val displayName: String,
     val category: String,
-    val collects: Set<PiiFieldType>
+    val collects: Set<PiiFieldType>,
+    val riskLevel: RiskLevel
 )

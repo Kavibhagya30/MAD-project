@@ -50,6 +50,10 @@ class UserProfileSecureStore @Inject constructor(
             .apply()
     }
 
+    fun clear() {
+        prefs.edit().clear().apply()
+    }
+
     /** Live updates whenever the encrypted profile changes, for reactive UI. */
     fun observe(): Flow<UserProfile> = callbackFlow {
         trySend(read())

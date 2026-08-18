@@ -18,4 +18,8 @@ class UserProfileRepositoryImpl @Inject constructor(
     override suspend fun saveProfile(profile: UserProfile) = withContext(Dispatchers.IO) {
         secureStore.write(profile)
     }
+
+    override suspend fun clearProfile() = withContext(Dispatchers.IO) {
+        secureStore.clear()
+    }
 }

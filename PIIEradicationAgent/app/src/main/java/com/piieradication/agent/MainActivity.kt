@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
-import com.piieradication.agent.presentation.screen.HomeScreen
+import com.piieradication.agent.presentation.screen.AppRoot
 import com.piieradication.agent.presentation.theme.PiiEradicationAgentTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PiiEradicationAgentTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    HomeScreen()
+                    AppRoot()
                 }
             }
         }

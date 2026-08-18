@@ -2,6 +2,7 @@ package com.piieradication.agent.di
 
 import android.content.Context
 import androidx.room.Room
+import com.piieradication.agent.data.local.AppEventDao
 import com.piieradication.agent.data.local.DeletionRequestDao
 import com.piieradication.agent.data.local.PiiDatabase
 import com.piieradication.agent.data.local.PiiRecordDao
@@ -29,4 +30,7 @@ object DatabaseModule {
     @Provides
     fun provideDeletionRequestDao(database: PiiDatabase): DeletionRequestDao =
         database.deletionRequestDao()
+
+    @Provides
+    fun provideAppEventDao(database: PiiDatabase): AppEventDao = database.appEventDao()
 }

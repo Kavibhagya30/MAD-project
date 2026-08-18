@@ -3,6 +3,7 @@ package com.piieradication.agent.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.piieradication.agent.domain.model.UserProfile
+import com.piieradication.agent.domain.usecase.ClearUserProfileUseCase
 import com.piieradication.agent.domain.usecase.ObserveUserProfileUseCase
 import com.piieradication.agent.domain.usecase.SaveUserProfileUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,7 +21,8 @@ import javax.inject.Inject
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     private val observeUserProfileUseCase: ObserveUserProfileUseCase,
-    private val saveUserProfileUseCase: SaveUserProfileUseCase
+    private val saveUserProfileUseCase: SaveUserProfileUseCase,
+    private val clearUserProfileUseCase: ClearUserProfileUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ProfileUiState())
@@ -58,5 +60,9 @@ class ProfileViewModel @Inject constructor(
             )
             _uiState.value = _uiState.value.copy(justSaved = true)
         }
+    }
+
+    fun logout() {
+        viewModelScope.launch { clearUserProfileUseCase() }
     }
 }

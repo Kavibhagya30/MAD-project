@@ -7,10 +7,12 @@ import com.piieradication.agent.data.remote.DeletionRequestApi
 import com.piieradication.agent.data.remote.dto.DeletionRequestDto
 import com.piieradication.agent.domain.model.DeletionRequest
 import com.piieradication.agent.domain.model.DeletionRequestStatus
+import com.piieradication.agent.domain.model.EventType
 import com.piieradication.agent.domain.model.PiiRecord
 import com.piieradication.agent.domain.registry.DataBrokerRegistry
 import com.piieradication.agent.domain.registry.DeletionRequestStatusAdvancer
 import com.piieradication.agent.domain.repository.DeletionRequestRepository
+import com.piieradication.agent.domain.repository.EventLogRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -20,7 +22,8 @@ import javax.inject.Inject
 
 class DeletionRequestRepositoryImpl @Inject constructor(
     private val dao: DeletionRequestDao,
-    private val api: DeletionRequestApi
+    private val api: DeletionRequestApi,
+    private val eventLog: EventLogRepository
 ) : DeletionRequestRepository {
 
     override fun observeAll(): Flow<List<DeletionRequest>> =
@@ -46,6 +49,12 @@ class DeletionRequestRepositoryImpl @Inject constructor(
             )
             created++
         }
+        if (created > 0) {
+            eventLog.log(
+                EventType.BROKER_DETECTED,
+                "Detected $created new broker exposure(s) for ${record.displayName}."
+            )
+        }
         created
     }
 
@@ -64,6 +73,10 @@ class DeletionRequestRepositoryImpl @Inject constructor(
                 val response = api.submitDeletionRequest(
                     DeletionRequestDto(broker = entity.brokerName, subjectRef = subjectRef)
                 )
+                eventLog.log(
+                    EventType.REQUEST_SENT,
+                    "Sent deletion request to ${entity.brokerName} for ${entity.recordDisplayName}."
+                )
                 entity.copy(
                     status = DeletionRequestStatus.SENT.name,
                     attempts = entity.attempts + 1,
@@ -73,6 +86,10 @@ class DeletionRequestRepositoryImpl @Inject constructor(
                 )
             } catch (e: Exception) {
                 Log.w(TAG, "Deletion request to ${entity.brokerName} failed: ${e.message}")
+                eventLog.log(
+                    EventType.REQUEST_FAILED,
+                    "Deletion request to ${entity.brokerName} failed for ${entity.recordDisplayName}."
+                )
                 entity.copy(
                     status = DeletionRequestStatus.FAILED.name,
                     attempts = entity.attempts + 1,
@@ -96,6 +113,10 @@ class DeletionRequestRepositoryImpl @Inject constructor(
                 dao.update(updated)
                 if (nextStatus == DeletionRequestStatus.COMPLETED) {
                     newlyCompleted += updated.toDomain()
+                    eventLog.log(
+                        EventType.REQUEST_COMPLETED,
+                        "${entity.brokerName} confirmed deletion of ${entity.recordDisplayName}'s data."
+                    )
                 }
             }
         }

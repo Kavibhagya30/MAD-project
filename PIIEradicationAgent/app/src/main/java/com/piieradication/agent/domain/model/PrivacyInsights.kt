@@ -9,7 +9,9 @@ data class PrivacyInsights(
     val requestsSent: Int = 0,
     val requestsAcknowledged: Int = 0,
     val requestsCompleted: Int = 0,
-    val requestsFailed: Int = 0
+    val requestsFailed: Int = 0,
+    val privacyScore: Int = 100,
+    val overallRiskLevel: RiskLevel = RiskLevel.LOW
 ) {
     val totalRequests: Int
         get() = requestsPending + requestsSent + requestsAcknowledged + requestsCompleted + requestsFailed

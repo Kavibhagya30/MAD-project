@@ -36,6 +36,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.piieradication.agent.domain.model.DeletionRequest
 import com.piieradication.agent.domain.model.DeletionRequestStatus
 import com.piieradication.agent.domain.model.PrivacyInsights
+import com.piieradication.agent.domain.model.RiskLevel
 import com.piieradication.agent.presentation.DashboardViewModel
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -62,7 +63,9 @@ fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 item { StatGrid(uiState.insights) }
+                item { PrivacyScoreCard(uiState.insights) }
                 item { RequestStatusBar(uiState.insights) }
+                item { PrivacyTipsCard() }
                 item {
                     Text(
                         "Recent deletion requests",
@@ -73,6 +76,61 @@ fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel()) {
                 items(uiState.recentRequests, key = { it.id }) { request ->
                     DeletionRequestRow(request)
                 }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PrivacyScoreCard(insights: PrivacyInsights) {
+    val riskColor = when (insights.overallRiskLevel) {
+        RiskLevel.HIGH -> MaterialTheme.colorScheme.error
+        RiskLevel.MEDIUM -> MaterialTheme.colorScheme.tertiary
+        RiskLevel.LOW -> MaterialTheme.colorScheme.primary
+    }
+    Card(elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column {
+                Text("Privacy score", fontWeight = FontWeight.Bold)
+                Text(
+                    "Share of detected exposures fully resolved",
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
+            Column(horizontalAlignment = Alignment.End) {
+                Text(
+                    "${insights.privacyScore}",
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    "Risk: ${insights.overallRiskLevel.name}",
+                    color = riskColor,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.labelMedium
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PrivacyTipsCard() {
+    val tips = listOf(
+        "Sync regularly from the Records tab so new exposures are caught early.",
+        "Review the Brokers tab and prioritize HIGH risk entries first.",
+        "Check the Requests tab if anything is stuck — tap resend to re-verify now.",
+        "Keep your Profile details accurate so broker matching stays relevant."
+    )
+    Card(elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text("Privacy tips", fontWeight = FontWeight.Bold)
+            tips.forEach { tip ->
+                Text("• $tip", style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 6.dp))
             }
         }
     }
