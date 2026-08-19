@@ -1,11 +1,49 @@
-# Android / Gradle
+### Android / Gradle ###
+*.iml
 .gradle/
-build/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Per-module build output
 **/build/
 
-# IDE
-.idea/
-*.iml
+# Keystores — never commit real signing keys
+*.jks
+*.keystore
 
-# Generated files
-**/generated/
+### Android Studio ###
+.idea/*
+!.idea/codeStyles/
+!.idea/runConfigurations/
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/deploymentTargetDropDown.xml
+*.iws
+
+### Gradle wrapper (keep the jar, ignore local wrapper cache) ###
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+### Kotlin ###
+.kotlin/
+
+### Logs / misc ###
+*.log
+*.hprof
+output.json
+
+### macOS / Windows junk ###
+.DS_Store
+Thumbs.db

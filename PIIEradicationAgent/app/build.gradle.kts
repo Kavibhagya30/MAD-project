@@ -35,6 +35,8 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs += "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
+
     }
 
     buildFeatures {
@@ -64,6 +66,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
     debugImplementation("androidx.compose.ui:ui-tooling")
+    implementation("com.google.android.material:material:1.12.0")
 
     // Hilt (DI)
     implementation("com.google.dagger:hilt-android:2.51.1")
